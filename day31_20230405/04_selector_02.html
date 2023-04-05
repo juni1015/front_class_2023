@@ -1,0 +1,58 @@
+<!-- html5 버전-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+        <title>id 선택자</title>
+        <style>
+            /* id1이 적용된 요소 스타일 저장*/
+            /* 배경색 : orange, 글자색 : white*/
+            #id1 {
+                background-color: orange;
+                /* color: white; */
+                /* color: rgb(255, 255, 255); */
+                color: #FFFFFF;
+            }
+            #id2 {
+                background-color: rgb(252, 195, 89);
+                color: white;
+            }
+            #id3 {
+                background-color: rgb(247, 208, 137);
+                color: white;
+            }
+            #id4 {
+                background-color: rgb(251, 239, 215);
+                color: white;
+            }
+            .class1 {
+                color: red;
+            }
+            .class2 {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="id1">
+            div 태그 입니다.
+        </div>
+        <p id="id2">
+            p 태그 입니다.
+        </p>
+        <div id="id3" class="class1 class2">
+            두번째 div 태그 입니다.
+        </div>
+        <h2 id="id4" class="class2">
+            h2 태그 입니다.
+        </h2>
+        <div class="class1 class2">
+            안녕하세요
+        </div>
+    </body>
+</html>

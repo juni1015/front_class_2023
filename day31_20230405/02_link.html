@@ -1,0 +1,27 @@
+<!-- html5 버전-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- href속성 : 목적지 -->
+        <a href="https://www.google.com">구글</a>
+        <a href="https://www.google.com" target="_blank">구글</a>
+
+        <!-- 이미지 출력-->
+        <!-- src : 출력할 이미지 경로 / alt : 이미지가 보이지 않을 경우 대체 메시지-->
+        <!-- 상대경로 : 현재파일(이미지를 출력하고 싶은 파일)을 기준으로 이미지 위치를 찾아가는 것-->
+        <!-- 절대경로 : 해당 파일의 위치의 전체 경로를 표한하는 것 (C:\front\front_class\images\Google_2015_logo.png)-->
+        <img src="/images/Google_2015_logo.png" alt=""> <!-- 해당 구문 같은 경우 ..을 안 써도 vs에서 알아서 찾아주지만 파일을 자체적으로 열 경우에는 사진이 표기되지 않는 문제 발생함-->
+        <img src="../images/Google_2015_logo.png" alt="">
+        <img src="../images/Google_2015_logo.png" width="100" height="50" alt="">
+        <img src="./images/Google_2015_logo.png" alt="이미지가 안보이면 보여요">
+
+        <!-- 구글 로고이미지를 클릭하면 구글 홈페이지로 이동-->
+        <a href="https://www.google.com" target="_blank"><img src="../images/Google_2015_logo.png" alt="이미지가 안보이면 보여요"></a>
+    </body>
+</html>
