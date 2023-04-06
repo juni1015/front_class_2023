@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float memu</title>
+    <style>
+        body {
+            background-color: rgb(197, 192, 192);
+        }
+        ul {
+            /* 기호 없애기 */
+            list-style-type: none;
+            /* 자식요소들에게 float가 적용되어 있을 때는 부모 높이가
+                사라지는 현상이 생김 이럴 때는 아래와 같이 속성을 줌 */
+            overflow: hidden;
+            background-color: gray;
+        }
+        li {
+            /* li 요소를 한줄로 */
+            float: left;
+        }
+        li a {
+            /* 한줄에 표현도하고 블록요소 특징도 사용가능 
+                블록요소로 지정해야 높이 너비 지정 가능*/
+            display: inline-block;
+            padding: 15px 15px;
+            text-align: center;
+            /* a태그에 적용된 밑줄 없애기 */
+            text-decoration: none;
+            color: black;
+        }
+        li a:hover {
+            color: white;
+        }
+        .active {
+            background-color: rgb(197, 192, 192);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#" class="active">저는요</a>
+        </li>
+        <li>
+            <a href="#">Portfolio</a>
+        </li>
+        <li>
+            <a href="#">Contact Me</a>
+        </li>
+    </ul>
+</body>
+</html>
