@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: red;
+        }
+        /* 가상선택자(pseudo selector) */
+        a:hover {
+            color: white;
+            background-color: orange;
+        }
+        div:hover {
+            background-color: violet;
+            color: white;
+        }
+        div p {
+            display: none;
+        }
+        /* div에 마우스를 올리면 해당 자손에 대해 적용 */
+        div:hover p {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="#">링크부분</a>
+    <div>
+        div 입니다.
+        <p>안녕하세요</p>
+    </div>
+
+</body>
+</html>
