@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        div {
+            width: 70%;
+            margin: 10px auto;
+        }
+        #year {
+            width: 30%;
+            float: left;
+            margin-right: 5px;
+        }
+        #month {
+            width: 35%;
+            float: left;
+            margin-right: 5px;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--bs-body-color);
+            background-color: var(--bs-body-bg);
+            background-clip: padding-box;
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: var(--bs-border-radius);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        #day {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div id="save_form">
+        <form action="/join" method="post">
+            <div>
+                <label for="email">아이디</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+            <div>
+                <label for="password">비밀번호</label>
+                <input type="text" id="password" name="password" class="form-control">
+            </div>
+            <div>
+                <label for="password_ok">비밀번호 재확인</label>
+                <input type="text" id="password_ok" name="password_ok" class="form-control">
+            </div>
+            <div>
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div>
+                <label for="year">생년월일</label><br>
+                <input type="text" id="year" name="year" placeholder="년(4자)" class="form-control">
+                <select name="month" id="month" class="form-select">
+                    <option value="">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <input type="text" id="day" name="day" placeholder="일" class="form-control">
+            </div>
+            
+            성별
+            <select name="gender" class="form-select">
+                <option value="">성별</option>
+                <option value="man">남자</option>
+                <option value="woman">여자</option>
+                <option value="nogender">선택안함</option>
+            </select>
+            <label for="email_ok">본인 확인 이메일(선택)</label>
+            <input type="text" id="email_ok" name="email_ok" placeholder="선택입력">
+            <label for="phon">휴대전화</label>
+            <select name="country">
+                <option value="82" selected>대한민국 +82</option>
+                <option value="45">덴마드 +45</option>
+            </select>
+            <input type="text" id="phon" name="phon" placeholder="전화번호 입력">
+            <!-- onclick 속성 : onclick 속성을 적용한 요소(태그)에 click 이벤트가 발생하면
+                                실행할 javascript 함수 또는 문법을 지정함 -->
+            <input type="button" value="인증번호 받기" onclick="hello()">
+            <!-- <button type="button" value="button type">인증번호 받기</button> -->
+            <input type="text" id="certified" name="certified" placeholder="인증번호 입력하세요">
+            <button input type="submit" value="join" >가입하기</button>
+        </form>
+    </div>
+</body>
+<script>
+    // function hello() {
+
+    // }
+    // 화살표함수(arrow function)
+    const hello = () => {
+        console.log("콘솔에 보여집니다.")
+        alert("alert으로 보여집니다")
+    }
+</script>
+</html>
