@@ -26,7 +26,15 @@
                 <label for="password">password</label>
             </div>
             <input type="submit" value="login" class="btn btn-primary mt-3">
+            <!-- form 태그 안에 작성한 버튼 태그는 submit의 역할을 함 -->
+            <button>버튼이에요</button>
+            <!-- form 태그 안에 submit 역할이 아닌 일반 버튼을 사용하고 싶다면 -->
+            <input type="button" value="button type">
         </form>
     </div>
+    <!-- get으로 요청 -->
+    <!-- http://127.0.0.1:5500/login?member_email=a%40aaa.com&member_password=1234 -->
+    <!-- post로 요청 -->
+    <!-- http://127.0.0.1:5500/login -->
 </body>
 </html>
