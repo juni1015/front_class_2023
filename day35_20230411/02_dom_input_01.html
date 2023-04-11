@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    입력1 : <input type="text" id="id1" name="id1" onkeyup="fun2()"><br>
+    입력2 : <input type="text" id="id2" name="id2" onblur="fun3()"><br>
+    <input type="button" value="입력값 확인" onclick="fun1()"><br>
+    <!-- 입력2에 입력한 값을 아래에 출력해보기 -->
+    입력한 값은 : <span id="resul1"></span>
+</body>
+<script>
+    const fun1 = () => {
+        const input1 = document.getElementById("id1");
+        console.log(input1);
+        console.log(input1.value);
+        const input2 = document.getElementById("id2");
+        console.log(input2);
+        console.log(input2.value);
+        const input1byName = document.getElementsByName("id1");
+        console.log(input1byName[0].value);
+        // querySelector를 name 값으로 가져올 때
+        const input2byName = document.querySelector('input[name="id1"]');
+        console.log(input2byName.value);
+    }
+    const fun2 = () => {
+        const input1 = document.getElementById("id1");
+        console.log(input1.value);
+    }
+    const fun3 = () => {
+        const input2 = document.getElementById("id2");
+        console.log(input2.value);
+        // 값을 뿌릴 요소 가지고 옴
+        const resul = document.getElementById("resul1");
+        // input 태그는 innerHTML, innerText가 먹히지 않음 / value를 사용해야 함
+        // 나머지 일반태그는 innerHTML, innerText를 사용해야 값을 가지고 올 수 있음
+        resul.innerHTML = input2.value;
+    }
+</script>
+</html>
