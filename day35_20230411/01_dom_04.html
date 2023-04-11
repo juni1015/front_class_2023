@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        /* table,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="id1">
+        <!-- 여기에 구구단을 table 태그를 이용하여 출력합니다. -->
+    </div>
+    <button onclick="fun1()">구구단 출력</button>
+
+    <div id="id2">
+        <!-- 여기에 구구단을 table 태그를 이용하여 출력합니다. -->
+    </div>
+    <button onclick="fun2()">구구단 출력2</button>
+</body>
+<script>
+    const fun1 = () => {
+        const div = document.getElementById("id1");
+
+        let table = "<table class='table table-hover'>";
+        let tr = "<tr>";
+        for (let i = 2; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                if (j == 0) {
+                    tr += "<td>" + i + "단" + "</td>";
+                } else {
+                    tr += "<td>" + (i * j) + "</td>";
+                }
+            }
+            tr += "</tr>";
+        }
+        table += tr + "</table>";
+        div.innerHTML = table;
+    }
+
+    const fun2 = () => {
+        console.log("aa");
+        const div = document.getElementById("id2");
+        const table = document.createElement("table");
+
+        for (let i = 2; i < 10; i++) {
+            const tr = document.createElement("tr");
+            for (let j = 0; j < 10; j++) {
+                let td = document.createElement("td");
+                if (j == 0) {
+                    td.appendChild(document.createTextNode(i + "단"));
+                } else {
+                    td.appendChild(document.createTextNode(i * j));
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        // class 추가
+        // table.classList.add('table', 'table-hover');
+        table.setAttribute('class', 'table table-hover');
+
+        div.appendChild(table);
+    }
+
+    // 쌤 버전
+    // const fun1 = () => {
+    //     const result = document.getElementById("id1");
+
+    //     let tableElement = "<table>";
+    //     for (let i = 2; i <= 9; i++) {
+    //         tableElement += "<tr>";
+    //         tableElement += "<td>" + i + "단</td>";
+    //         for (let j = 1; j <= 9; j++) {
+    //             tableElement += "<td>" + i * j + "</td>";
+    //         }
+    //         tableElement += "</tr>";
+    //     }
+    //     tableElement += "</table>";
+    //     result.innerHTML = tableElement;
+
+        // const table = document.createElement("table");
+        // for (let i = 2; i <= 9; i++) {
+        //     const tr = document.createElement("tr");
+        //     let td = document.createElement("td");
+        //     td.appendChild(document.createTextNode(i+"단"));
+        //     tr.appendChild(td);
+        //     for (let j = 1; j <= 9; j++) {
+        //         td = document.createElement("td");
+        //         td.appendChild(document.createTextNode(i*j));
+        //         tr.appendChild(td);
+        //     }
+        //     table.appendChild(tr);
+        // }
+
+        // // class 추가
+        // // table.classList.add('table', 'table-hover');
+        // table.setAttribute('class', 'table table-hover');
+
+
+        // result.appendChild(table);
+
+    // }
+</script>
+
+</html>
