@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/bada.jpg" alt="" id="img1">
+    <button onclick="changeImg()">이미지 교체</button>
+</body>
+<script>
+    const changeImg = () => {
+        const img = document.getElementById("img1");
+        console.log(img);
+        console.log(img.src);
+
+        // src 값을 변경하여 출력되는 이미지 변경하기
+        // const img2 = document.getElementById("img1").src = "../images/bada2.jpg";
+        // console.log(img2);
+        img.src = "../images/bada2.jpg";
+    }
+</script>
+</html>
