@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    JAVA 성적 : <input type="text" name="num1" id="id1"><br>
+    html 성적 : <input type="text" name="num2" id="id2"><br>
+    학점 : <input type="text" name="credit1" id="id3"><br>
+    <h1 id="id4" onmouseover="fun2()" onmouseout="fun3()"></h1>
+    <input type="button" value="학점계산" onclick="fun1()">
+</body>
+<script>
+    const fun1 = () => {
+        const number1 = parseInt(document.getElementById("id1").value);
+        const number2 = parseInt(document.getElementById("id2").value);
+        let avg1 = (number1 + number2) / 2;
+        console.log(avg1);
+        if (avg1 >= 90) {
+            avg1 = "A";
+        } else if (avg1 >= 80) {
+            avg1 = "B";
+        } else if (avg1 >= 70) {
+            avg1 = "C";
+        } else if (avg1 >= 60) {
+            avg1 = "D";
+        } else {
+            avg1 = "F";
+        }
+        const resul1 = document.getElementById("id3");
+        resul1.value = avg1;
+        document.getElementsByTagName("h1")[0].innerText = "당신의 학점은 " + avg1 + "입니다.";
+    }
+    const fun2 = () => {
+        const number1 = parseInt(document.getElementById("id1").value);
+        const number2 = parseInt(document.getElementById("id2").value);
+        let avg1 = (number1 + number2) / 2;
+        const resul1 = document.getElementsByTagName("h1");
+        if (avg1 >= 90) {
+            resul1[0].style.color = "white";
+            resul1[0].style.backgroundColor = "cornflowerblue";
+        } else if (avg1 >= 80) {
+            resul1[0].style.color = "white";
+            resul1[0].style.backgroundColor = "darkturquoise";
+        } else if (avg1 >= 70) {
+            resul1[0].style.color = "white";
+            resul1[0].style.backgroundColor = "cadetblue";
+        } else if (avg1 >= 60) {
+            resul1[0].style.color = "white";
+            resul1[0].style.backgroundColor = "darkgray";
+        } else {
+            resul1[0].style.color = "red";
+            resul1[0].style.backgroundColor = "black";
+        }
+    }
+    const fun3 = () => {
+        const resul1 = document.getElementById("id4");
+        resul1.style.color = "black";
+        resul1.style.backgroundColor = "white";
+    }
+</script>
+
+</html>
