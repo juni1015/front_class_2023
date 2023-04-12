@@ -16,26 +16,46 @@
     <input type="button" value="학점계산" onclick="fun1()">
 </body>
 <script>
+    // const fun1 = () => {
+    //     const number1 = parseInt(document.getElementById("id1").value);
+    //     const number2 = parseInt(document.getElementById("id2").value);
+    //     let avg1 = (number1 + number2) / 2;
+    //     console.log(avg1);
+    //     if (avg1 >= 90) {
+    //         avg1 = "A";
+    //     } else if (avg1 >= 80) {
+    //         avg1 = "B";
+    //     } else if (avg1 >= 70) {
+    //         avg1 = "C";
+    //     } else if (avg1 >= 60) {
+    //         avg1 = "D";
+    //     } else {
+    //         avg1 = "F";
+    //     }
+    //     const resul1 = document.getElementById("id3");
+    //     resul1.value = avg1;
+    //     document.getElementsByTagName("h1")[0].innerText = "당신의 학점은 " + avg1 + "입니다.";
+    // }
+    // 쌤
     const fun1 = () => {
-        const number1 = parseInt(document.getElementById("id1").value);
-        const number2 = parseInt(document.getElementById("id2").value);
-        let avg1 = (number1 + number2) / 2;
-        console.log(avg1);
-        if (avg1 >= 90) {
-            avg1 = "A";
-        } else if (avg1 >= 80) {
-            avg1 = "B";
-        } else if (avg1 >= 70) {
-            avg1 = "C";
-        } else if (avg1 >= 60) {
-            avg1 = "D";
+        const java = document.getElementById("id1").value;
+        const html = document.getElementById("id2").value;
+        let avg = (parseInt(java) + parseInt(html)) / 2;
+        let grade = "";
+        if (avg >= 90) {
+            grade = "A";
+        } else if (avg >= 80) {
+            grade = "B";
+        } else if (avg >= 70) {
+            grade = "C";
         } else {
-            avg1 = "F";
+            grade = "D";
         }
-        const resul1 = document.getElementById("id3");
-        resul1.value = avg1;
-        document.getElementsByTagName("h1")[0].innerText = "당신의 학점은 " + avg1 + "입니다.";
+        const result = document.getElementById("id3");
+        result.value = grade;
+        document.getElementById("id4").innerText = "당신의 학점은 " + grade + "입니다.";
     }
+
     const fun2 = () => {
         const number1 = parseInt(document.getElementById("id1").value);
         const number2 = parseInt(document.getElementById("id2").value);
