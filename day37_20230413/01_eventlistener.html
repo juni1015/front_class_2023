@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이벤트 리스너(Event Listener) -->
+    <button onclick="fun1()">onclick으로 함수 호출</button>
+    <button id="id1">이벤트 리스너로 함수 호출</button>
+    <button id="id2">이벤트 리스너로 함수 호출2</button>
+</body>
+<script>
+    const fun1 = () => {
+        console.log("함수 호출됨");
+    }
+
+    const btn1 = document.getElementById("id1");
+    // btn1이 클릭되면 함수를 실행하도록 이벤트 리스너 적용
+    // addEventListener("on을 뺀 이벤트의 종류", )
+    // 익명함수 : 함수의 이름은 없는데 실행구문은 있는 함수
+    btn1.addEventListener("click", function() {
+        console.log("이벤트 리스너 함수 호출");
+    })
+
+    const btn2 = document.getElementById("id2");
+    // btn2를 클릭하면 fun1 함수 호출
+    btn2.addEventListener("click", fun1);
+</script>
+</html>

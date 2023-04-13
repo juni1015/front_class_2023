@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+        div {
+            width: 70%;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        blur 이벤트를 이벤트 리스너를 적용하여 email_check 함수 호출
+        정규식 적용 : 소문자, 숫자 필수 8~16자 이내로 
+    -->
+    <div>
+        <h6>이메일</h6>
+        <input type="text" id="member-email" class="form-control" onblur="email_check()" name="memberEmail">
+        <p id="email-result"></p>
+    </div>
+</body>
+<script>
+    // const email = document.getElementById("member-email");
+    // email.addEventListener("blur", function () {
+    //     const emailResult = document.getElementById("email-result");
+    //     const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,16}$/;
+    //     if (email.value.match(exp)) {
+    //         emailResult.innerHTML = "좋아요"
+    //         emailResult.style.color = "green";
+    //     } else {
+    //         if (email.value.length == 0) {
+    //             emailResult.innerHTML = "필수 입력입니다";
+    //             emailResult.style.color = "red";
+    //         } else if (email.value.length < 8 || email.value.length > 16) {
+    //             emailResult.innerHTML = "8~16자리로 입력하세요";
+    //             emailResult.style.color = "red";
+    //         } else {
+    //             emailResult.innerHTML = "숫자와 영어 소문자는 필수 입력입니다.";
+    //         }
+    //     }
+    // })
+
+    // 쌤
+    email_check = () => {
+        const email = document.getElementById("member-email").value;
+        const emailResult = document.getElementById("email-result");
+        const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,16}$/;
+        if (email.length == 0) {
+            emailResult.innerHTML = "필수 입력입니다";
+            emailResult.style.color = "red";
+        } else if (!email.match(exp)) {
+            emailResult.innerHTML = "8~16자 이내로 소문자와 숫자만 가능합니다";
+            emailResult.style.color = "red";
+        } else {
+            emailResult.innerHTML = "좋아요";
+            emailResult.style.color = "green";
+        }
+    }
+
+    // const email = document.getElementById("member-email");
+    // email.addEventListener("blur", email_check);
+    // 위의 두줄을 아래의 한줄로 사용도 가능
+    document.getElementById("member-email").addEventListener("blur", email_check);
+
+    
+</script>
+
+</html>
